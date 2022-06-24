@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-import os
+
 from datetime import timedelta
 from pathlib import Path
 
@@ -81,28 +81,14 @@ WSGI_APPLICATION = 'assignment.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-
-def parse_credentials(DB_URL):
-    #"postgres://postgres:postgres@localhost:5432/mke-dev"
-    return "mke-dev", "postgres", "postgres", "localhost", 5432
-
-
-DATABASE_URL = os.environ.get("DATABASE_URL","")
-DB_NAME, USER, PASSWORD, HOST, PORT = parse_credentials(DATABASE_URL)
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-
-        'NAME': DB_NAME,
-
-        'USER': USER,
-
-        'PASSWORD': PASSWORD,
-
-        'HOST': HOST,
-
-        'PORT': PORT,
+        'NAME': "<DB_NAME>",
+        'USER': "<USER>",
+        'PASSWORD': "<PASSWORD>",
+        'HOST': "<HOST>",
+        'PORT': 5432,
     }
 }
 
